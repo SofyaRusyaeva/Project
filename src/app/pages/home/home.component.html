@@ -1,0 +1,67 @@
+<div class="box">
+    <p>Вход</p>
+    <div class = "form_container">
+        <label>Имя </label>
+        <input [(ngModel)]="name" />
+    </div>
+
+    <div class = "form_container">
+        <label>Номер телефона </label>
+        <input [(ngModel)]="cellNumber" />
+    </div>
+
+    <div>
+        <button (click)="logIn()">Войти</button>
+    </div>
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Раздел</th>
+            <th>Продукт</th>
+            <th>Количество/объем</th>
+            <th>Бренд</th>
+            <th>Цена</th>
+            <th>Комментарий</th>
+            <th>Удалить</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let obj of careList">
+            <td>Уходовая косметика</td>
+            <td> {{ obj.product }}</td>
+            <td> {{ obj.amount }}</td>
+            <td> {{ obj.brand }}</td>
+            <td> {{ obj.price }}</td>
+            <td> {{ obj.comment }}</td>
+            <td> <button (click)="delete(obj.id, 0)">Удалить</button></td>
+        </tr>
+
+        <tr *ngFor="let obj of makeupList">
+            <td>Декоративная косметика</td>
+            <td>{{ obj.product }}</td>
+            <td> {{ obj.amount }}</td>
+            <td> {{ obj.brand }}</td>
+            <td> {{obj.price}}</td>
+            <td> {{ obj.comment }}</td>
+            <td> <button (click)="delete(obj.id, 1)">Удалить</button></td>
+        </tr>
+
+        <tr *ngFor="let obj of parfumeList">
+            <td>Парфюм</td>
+            <td>{{ obj.product }}</td>
+            <td> {{ obj.volume }}</td>
+            <td> {{ obj.brand }}</td>
+            <td> {{obj.price}}</td>
+            <td> {{ obj.comment }}</td>
+            <td> <button (click)="delete(obj.id, 2)">Удалить</button></td>
+        </tr>
+
+        <tr>
+            <td colspan="7">Итого: {{ this.sum }}</td>
+        </tr>
+    </tbody>
+</table>

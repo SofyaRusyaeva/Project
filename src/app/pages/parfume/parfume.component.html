@@ -1,0 +1,64 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <div class = "form_container">
+        <label>Продукт:</label>
+        <input type="string" formControlName="product">
+    </div>
+    <div class = "form_container">
+        <label>Объем:</label>   
+        <input type="number" formControlName="volume">
+    </div>
+    <div class = "form_container">
+        <label>Бренд:</label>
+        <input type="text" formControlName="brand">
+    </div>
+    <div class = "form_container">
+        <label>Ноты:</label>
+        <input type="string" formControlName="notes">
+    </div>
+    <div class = "form_container">
+    <label>Для кого:</label>
+    <select formControlName="sex">
+        <option *ngFor="let option of sexOptions" [value]="option">{{ option }}</option>
+    </select>
+    </div>
+    <div class = "form_container">
+        <label>Комментарий:</label>
+        <textarea formControlName="comment"></textarea>
+    </div>
+    <div class = "form_container">
+        <label>Цена:</label>
+        <input type="number" formControlName="price">
+    </div>
+    <button type="submit" [disabled]="!taskForm.valid">Заказать</button>
+</form>
+
+
+<table class="table-bordered">
+    <thead>
+      <tr>
+        <th>Продукт</th>
+        <th>Объем</th>
+        <th>Бренд</th>
+        <th>Ноты</th>
+        <th>Для кого</th>
+        <th>Цена</th>
+        <th>Комментарий</th>
+        <th>Дата заказа</th>
+        <th>Редактировать</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of parfumeList">
+        <td>{{ obj.product }}</td>
+        <td>{{ obj.volume }}</td>
+        <td>{{ obj.brand }}</td>
+        <td>{{ obj.notes }}</td>
+        <td>{{ obj.sex }}</td>
+        <td>{{ obj.price }}</td>
+        <td>{{ obj.comment }}</td>
+        <td>{{ obj.orderDate | date }}</td>
+        <td> <button (click)="deleteTask(obj.id)">Удалить</button>
+          <button (click)="editTask(obj.id)">Редактировать</button></td>
+      </tr>
+    </tbody>
+  </table>

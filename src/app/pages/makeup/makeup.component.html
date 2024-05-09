@@ -1,0 +1,64 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <div class = "form_container">
+    <label>Тип продукта:</label>
+    <input type="text" formControlName="product">
+  </div>
+  <div class = "form_container">
+    <label>Количество:</label>
+    <input type="number" formControlName="amount">
+  </div>
+  <div class = "form_container">
+    <label>Бренд:</label>
+    <input type="text" formControlName="brand">
+  </div>
+  <div class = "form_container">
+    <label>Оттенок:</label>
+    <input type="number" formControlName="color">
+  </div>
+  <div class = "form_container">
+    <label>Гипоаллергенно:</label>
+    <select formControlName="isHypoallergenic">
+      <option *ngFor="let option of isHypoallergenicOptions" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+  <div class = "form_container">
+    <label>Цена:</label>
+    <input type="number" formControlName="price">
+  </div>
+  <div class = "form_container">
+    <label>Комментарий:</label>
+    <textarea formControlName="comment"></textarea>
+  </div>
+  <button type="submit" [disabled]="!taskForm.valid">Заказать</button>
+</form>
+
+
+<table class="table-bordered">
+  <thead>
+    <tr>
+      <th>Продукт</th>
+      <th>Количество</th>
+      <th>Бренд</th>
+      <th>Оттенок</th>
+      <th>Гипоаллергенно</th>
+      <th>Комментарий</th>
+      <th>Цена</th>
+      <th>Дата заказа</th>
+      <th>Редактировать</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of makeupList">
+      <td> {{ obj.product }}</td>
+      <td> {{ obj.amount }}</td>
+      <td> {{ obj.brand }}</td>
+      <td> {{ obj.color }}</td>
+      <td> {{ obj.isHypoallergenic }}</td>
+      <td> {{ obj.comment }}</td>
+      <td> {{obj.price}}</td>
+      <td> {{ obj.orderDate | date }}</td>
+      <td> <button (click)="deleteTask(obj.id)">Удалить</button>
+        <button (click)="editTask(obj.id)">Редактировать</button></td>
+    </tr>
+  </tbody>
+</table>

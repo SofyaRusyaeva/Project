@@ -1,0 +1,76 @@
+<body><form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <div   class = "form_container">
+    <label>Тип продукта:</label>
+    <input type="text" formControlName="product">
+  </div>
+  <div   class = "form_container">
+    <label>Область применения:</label>
+    <input type="text" formControlName="area">
+  </div>
+  <div   class = "form_container">
+    <label>Для кого:</label>
+    <select formControlName="sex">
+      <option *ngFor="let option of sexOptions" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+
+  <div   class = "form_container">
+    <label>Количество:</label>
+    <input type="number" formControlName="amount">
+  </div>
+  <div   class = "form_container">
+    <label>Бренд:</label>
+    <input type="text" formControlName="brand">
+  </div>
+  <div   class = "form_container">
+    <label>Тип кожи:</label>
+    <select formControlName="skinType">
+      <option *ngFor="let option of skinTypeOptions" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+  <div   class = "form_container">
+    <label>Цена:</label>
+    <input type="number" formControlName="price">
+</div>
+  <div class = "form_container">
+    <label>Комментарий:</label>
+    <textarea formControlName="comment"></textarea>
+  </div>
+  <button type="submit" [disabled]="!taskForm.valid">Заказать</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Продукт</th>
+      <th>Область применения</th>
+      <th>Для кого</th>
+      <th>Количество</th>
+      <th>Бренд</th>
+      <th>Тип кожи</th>
+      <th>Цена</th>
+      <th>Комментарий</th>
+      <th>Дата заказа</th>
+      <th>Редактировать</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of careList">
+      <td>{{ obj.product }}</td>
+      <td>{{ obj.area }}</td>
+      <td>{{obj.sex}}</td>
+      <td>{{ obj.amount }}</td>
+      <td>{{obj.brand}}</td>
+      <td>{{ obj.skinType }}</td>
+      <td>{{ obj.price }}</td>
+      <td>{{ obj.comment }}</td>
+      <td>{{ obj.orderDate | date }}</td>
+      <td> <button (click)="deleteTask(obj.id)">Удалить</button>
+   <button (click)="editTask(obj.id)">Редактировать</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  
+</body>
