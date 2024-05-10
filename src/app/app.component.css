@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 table,
 th,
 td {
@@ -7,37 +9,43 @@ td {
     font-size: 19px;
     margin-left: auto;
     margin-right: auto;
+    margin-top:   20px;
     width: 1200px;
+    background-color: #e0c5c5;
+    color: #353535;
+    font-family: 'Montserrat';
 }
 
-body {
+html, head, title, form, div {
     background-color: #e0c5c5;
     color: #353535;
     font-family: 'Montserrat';
 }
 
 .header {
-    position: fixed;
-    /* фиксированное позиционирование для центрирования */
-    left: 12%;
+    /* position: fixed; */
+    /* display: flex; */
+    font-size: 19px;
+    margin-left: auto;
+    margin-right: auto;
+    /* left: 12%; */
     top: 30px;
-    width: 100%;
-}
-
-.router-outlet {
-    padding-top: 100px;
+    /* width: 100%; */
+    padding-top: 30px;
+    padding-bottom: 40px;
 }
 
 a {
     font-size: 25px;
     text-decoration: none;
     color: #333;
-    margin: 0 50px;
+    margin: 50px;
 }
 
 .form_container {
-
-    display: flex; /* устанавливаем контейнер формы как flex-контейнер */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
     align-items: center;
     margin-bottom: 10px;
     padding-left: 30px;
@@ -52,9 +60,8 @@ a {
 .form_container select,
 .form_container textarea {
     padding: 10px;
-    padding: 10px;
     border: 1px solid #595959;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 15px;
     flex: 0.5; 
 }
@@ -68,9 +75,9 @@ form{
 }
 .box{
     margin-left: auto;
-    /* margin-right: auto; */
+    margin-right: auto;
     width: 400px;
-    border: 3px solid #595959;
+    border: 2px solid #595959;
     border-radius: 10px;
     padding: 10px;
 }
@@ -78,3 +85,62 @@ p{
     text-align: center;
     font-size: 20px;
 }
+
+.btn-update {
+    margin-left: auto;
+    margin-right: auto;
+    font-family:'Montserrat';
+    line-height: 30px; /* увеличиваем высоту строки */
+    height: 30px; /* увеличиваем высоту кнопки */
+    width: 100; /* увеличиваем ширину кнопки */
+    text-align: center; /* центрируем текст по горизонтали */
+    border: none;
+    font-size: medium;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    background: #6d6dff;
+    box-shadow: 0 5px 0 #604eff;
+  }
+
+  .btn-delete {
+    margin-left: auto;
+    margin-right: auto;
+    font-family:'Montserrat';
+    line-height: 30px; /* увеличиваем высоту строки */
+    height: 30px; /* увеличиваем высоту кнопки */
+    width: 100px; /* увеличиваем ширину кнопки */
+    text-align: center; /* центрируем текст по горизонтали */
+    border: none;
+    font-size: medium;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    background: #ff6d6d;
+    box-shadow: 0 5px 0 #ff4e4e;
+  }
+
+.btn-new  {
+    margin-left: auto;
+    margin-right: auto;
+    font-family:'Montserrat';
+    line-height: 60px; /* увеличиваем высоту строки */
+    height: 60px; /* увеличиваем высоту кнопки */
+    width: 300px; /* увеличиваем ширину кнопки */
+    text-align: center; /* центрируем текст по горизонтали */
+    border: none;
+    font-size: medium;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    background: #84878b;
+    box-shadow: 0 5px 0 #545456;
+  }
+  
+  .btn-new:hover {
+    background: #272728;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+  }

@@ -1,4 +1,6 @@
-<div class="box">
+<div>
+
+    <div class="box">
     <p>Вход</p>
     <div class = "form_container">
         <label>Имя </label>
@@ -11,7 +13,7 @@
     </div>
 
     <div>
-        <button (click)="logIn()">Войти</button>
+        <button (click)="logIn()" class="btn-new">Войти</button>
     </div>
 </div>
 
@@ -37,7 +39,7 @@
             <td> {{ obj.brand }}</td>
             <td> {{ obj.price }}</td>
             <td> {{ obj.comment }}</td>
-            <td> <button (click)="delete(obj.id, 0)">Удалить</button></td>
+            <td> <button (click)="delete(obj.id, 0)" class="btn-delete">Удалить</button></td>
         </tr>
 
         <tr *ngFor="let obj of makeupList">
@@ -47,7 +49,7 @@
             <td> {{ obj.brand }}</td>
             <td> {{obj.price}}</td>
             <td> {{ obj.comment }}</td>
-            <td> <button (click)="delete(obj.id, 1)">Удалить</button></td>
+            <td> <button (click)="delete(obj.id, 1)" class="btn-delete">Удалить</button></td>
         </tr>
 
         <tr *ngFor="let obj of parfumeList">
@@ -57,7 +59,7 @@
             <td> {{ obj.brand }}</td>
             <td> {{obj.price}}</td>
             <td> {{ obj.comment }}</td>
-            <td> <button (click)="delete(obj.id, 2)">Удалить</button></td>
+            <td> <button (click)="delete(obj.id, 2)" class="btn-new1" class="btn-delete">Удалить</button></td>
         </tr>
 
         <tr>
@@ -65,3 +67,4 @@
         </tr>
     </tbody>
 </table>
+</div>

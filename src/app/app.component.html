@@ -1,8 +1,11 @@
-  <div >
-      <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Главная страница</a>
-      <a routerLink="/care">Уходовая косметика </a>
-      <a routerLink="/makeup">Декоративная косметика </a>
-      <a routerLink="/parfume">Парфюм </a>
+<!-- <body> -->
+<div class="header">
+  <div>
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Главная страница</a>
+    <a routerLink="/care">Уходовая косметика </a>
+    <a routerLink="/makeup">Декоративная косметика </a>
+    <a routerLink="/parfume">Парфюм </a>
   </div>
-  <div class="router-outlet"> <router-outlet></router-outlet>
-  </div>
+</div>
+<!-- </body> -->
+<router-outlet></router-outlet>

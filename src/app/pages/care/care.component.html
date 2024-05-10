@@ -1,4 +1,5 @@
-<body><form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+<div class="style">
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
   <div   class = "form_container">
     <label>Тип продукта:</label>
     <input type="text" formControlName="product">
@@ -10,7 +11,7 @@
   <div   class = "form_container">
     <label>Для кого:</label>
     <select formControlName="sex">
-      <option *ngFor="let option of sexOptions" [value]="option">{{ option }}</option>
+      <option *ngFor="let option of sexOptions" [value]="option" class="btn-new">{{ option }}</option>
     </select>
   </div>
 
@@ -36,7 +37,7 @@
     <label>Комментарий:</label>
     <textarea formControlName="comment"></textarea>
   </div>
-  <button type="submit" [disabled]="!taskForm.valid">Заказать</button>
+  <button type="submit" [disabled]="!taskForm.valid" class="btn-new">Заказать</button>
 </form>
 
 <table>
@@ -65,12 +66,12 @@
       <td>{{ obj.price }}</td>
       <td>{{ obj.comment }}</td>
       <td>{{ obj.orderDate | date }}</td>
-      <td> <button (click)="deleteTask(obj.id)">Удалить</button>
-   <button (click)="editTask(obj.id)">Редактировать</button>
+      <td> <button (click)="deleteTask(obj.id)" class="btn-delete">Удалить</button>
+   <button (click)="editTask(obj.id)" class="btn-update">Редактировать</button>
       </td>
     </tr>
   </tbody>
 </table>
 
   
-</body>
+</div>
